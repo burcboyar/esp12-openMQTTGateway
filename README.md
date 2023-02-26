@@ -4,11 +4,10 @@ openMQTTGateway is a great project which aims to create a single firmware that c
 
 Heard about this project from this video (https://www.youtube.com/watch?v=_gdXR1uklaY) of the Andreas Spiess (AKA the guy with the Swiss accent) and wanted to give it a try. I'm not exactly sure why but things didn't go smooth as on the video and took almost my 2 days to make it work, so I decided to create a step by step guide for the people who wants to create a bare ESP-12 based openMQTTGateway using CC1101 radio module.
 
-Hope you like it.
-
-
+Hope it works for you.
 
 ### Material List
+
 - ESP8266 (I used an ESP-12)
 
 ![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/esp12.png)
@@ -21,6 +20,22 @@ This is a great board that can let you program ESP-01, ESP-12 and ESP32.
 
 - CC1101 module
 
-I had this one in my stock, so I used it but it is very tiny and not breadboard friendly, so you may consider buying other CC1101 modules, they have the same pinouts.
+I had this one in my stock, so I used it but it is very tiny and not breadboard friendly, so you may consider buying other CC1101 modules, since they have the same pinouts.
 
 ![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/cc1101.png)
+
+### Wiring
+
+I tried the CC1101 wiring from the openMQTTGateway site (https://docs.openmqttgateway.com/setitup/rf.html#pinout) and also tried LSatan's wiring (https://github.com/LSatan/SmartRC-CC1101-Driver-Lib#wiring) but none of them worked for me so I decided to make my own. I strongly suggest you to follow this wiring because even if you make the necessary changes in the code, sometimes the radio is not working with different GPIO's because of the states of the pins of the ESP-12. 
+
+| CC1101         | ESP-12        | 
+| :------------: |:-------------:|
+| VCC            | VCC (3.3 V)   |
+| GRD            | GRD           |
+| GDO2 (Receiver)| GPIO4         |
+| GDO1 (MISO)    | GPIO12        |
+| MOSI           | GPIO13        |
+| SCK            | GPIO14        |
+| CSN            | GPIO15        |
+| GDO0 (Emmiter) | GPIO2         |
+
