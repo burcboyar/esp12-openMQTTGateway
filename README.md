@@ -1,4 +1,4 @@
-# A step by step guide for wiring and flashing ESP-12 with openMQTTGateway and CC1101 radio module.
+# A step by step guide for wiring and flashing ESP-12 with openMQTTGateway with CC1101 radio module.
 
 openMQTTGateway is a great project which aims to create a single firmware that can read data from BLE, LoRa, RF, GSM, GPRS and infrared devices and then publish it over MQTT. (https://docs.openmqttgateway.com/)
 
@@ -39,3 +39,6 @@ I tried the CC1101 wiring from the openMQTTGateway site (https://docs.openmqttga
 | CSN            | GPIO15        |
 | GDO0 (Emmiter) | GPIO2         |
 
+### Code changes
+
+openMQTTGateway site offers 3 options for uploading the code; uploading from the web, uploading ready to go binaries and uploading your own configurations. I succesfully flashed the chip with 1st and 2nd option but when I use nodemcuv2-rf-cc1101, nodemcuv2-rf2-cc1101 or nodemcuv2-somfy-cc1101 firmwares, they failed to create the wifi access point, only a wifi network with the chip name (like ESP12F) created and it cannot be connected. I didn't had such problem with other nodemcu firmwares, the always created wifi access point with the name OpenMQTTGateway but this time the radio didn't work. So, I had to select the 3rd way andgo with my own configuration.
