@@ -13,6 +13,14 @@ Hope you like it.
 
 ![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/esp12.png)
 
-- Programmer
+- ESP8266 Development Board (https://www.aliexpress.com/item/1005004609383559.html)
+
+This is a great board that can let you program ESP-01, ESP-12 and ESP32.
 
 ![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/Programmer.png)
+
+- CC1101 module
+
+I had this one in my stock, so I used it but it is very tiny and not breadboard friendly, so you may consider buying other CC1101 modules, they have the same pinouts.
+
+![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/cc1101.png)
