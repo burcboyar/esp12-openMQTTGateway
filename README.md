@@ -41,4 +41,14 @@ I tried the CC1101 wiring from the openMQTTGateway site (https://docs.openmqttga
 
 ### Code changes
 
-openMQTTGateway site offers 3 options for uploading the code; uploading from the web, uploading ready to go binaries and uploading your own configurations. I succesfully flashed the chip with 1st and 2nd option but when I use nodemcuv2-rf-cc1101, nodemcuv2-rf2-cc1101 or nodemcuv2-somfy-cc1101 firmwares, they failed to create the wifi access point, only a wifi network with the chip name (like ESP12F) created and it cannot be connected. I didn't had such problem with other nodemcu firmwares, the always created wifi access point with the name OpenMQTTGateway but this time the radio didn't work. So, I had to select the 3rd way andgo with my own configuration.
+openMQTTGateway site offers 3 options for uploading the code; uploading from the web, uploading ready to go binaries and uploading your own configurations. I succesfully flashed the chip with 1st and 2nd option but when I use nodemcuv2-rf-cc1101, nodemcuv2-rf2-cc1101 or nodemcuv2-somfy-cc1101 firmwares, they failed to create the wifi access point, only a wifi network with the chip name (like ESP12F) created and it cannot be connected. I didn't had such problem with other nodemcu firmwares, they always created wifi access point with the name OpenMQTTGateway but this time the radio didn't work. So, I had to select the 3rd way and go with my own configuration.
+
+You'll need a development environment to do this and for not dealing with library and other problems I used PlatformIO. To use it;
+- First goto https://platformio.org/install/ide?install=vscode and download Microsoft's Visual Studio Code.
+- After installation open VSCode Extension Manager
+- Search for official PlatformIO IDE extension
+- Install PlatformIO IDE.
+- Goto https://github.com/1technophile/OpenMQTTGateway/releases and download the openMQTTGateway code.
+- Unzip the file and open folder from the Visual Studio Code.
+- To be able to use CC1101 we have to uncomment it in then User_config.h file. Find //#define ZradioCC1101   "CC1101"   //ESP8266, ESP32 line and replace it with #define ZradioCC1101   "CC1101"   //ESP8266, ESP32.
+- 
