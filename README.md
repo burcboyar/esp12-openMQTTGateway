@@ -53,4 +53,10 @@ You'll need a development environment to do this and for not dealing with librar
 
 #### Changes in User_config.h
 - Uncomment line "//#define ZradioCC1101   "CC1101"   //ESP8266, ESP32" (This enables CC1101 radio)
-- 
+- If you experience wifi access point problems like me, you'll have to manually enter your wifi credentials;
+
+Uncomment line  "//#  define ESPWifiManualSetup true //uncomment you don't want to use wifimanager for your credential settings on ESP"
+
+Enter your SSID in line "#    define wifi_ssid "YOUR SSID HERE"
+
+Enter your WIFI password in line "#    define wifi_password "YOUR WIFI PASSWORD HERE"
