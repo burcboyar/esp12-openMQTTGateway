@@ -121,3 +121,15 @@ These will define our receiver and emitter pins. So, if you made a different wir
 If all goes well, you should now have a working openMQTTGateway.
 
 ### Testing
+
+- There is a great tool called MQTT Explorer coded by Thomas Nordquist which I use to listen and send commands to my MQTT server. I strongly recommend it. (http://mqtt-explorer.com/)
+- After running MQTT Explorer you'll have to enter the credentials of your MQTT server and press connect.
+- If your gateway is operational you should see two new topics; one is the base topic (default is home) and the other one is homeassistant.
+- If there are 433mhz devices around you, you can monitor their signals data under your base topic/OpenMQTTGateway_ESP8266_RF-CC1101/433toMQTT topic and also under homeassistant/device_automation topics.
+- To send radio signals, you should use this syntax as topic; your base topic/OpenMQTTGateway_ESP8266_RF-CC1101/commands/MQTTto433. For example if your base topic is "home" and you want to send a value like "123456" the correct topic should be "home/OpenMQTTGateway_ESP8266_RF-CC1101/commands/MQTTto433". You may enter it to MQTT Explorer like this and click publish to transfer it:
+![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/MQTT.png)
+- Rest is it's about the settings you will make on your controller (like openHAB or Home Assistant).
+
+I hope this guide will help you.
+
+I want to thank all the folks on OpenMQTTGateway project for this piece of great code. Nice work guys...
