@@ -113,3 +113,11 @@ These will define our receiver and emitter pins. So, if you made a different wir
 
 ### Flashing
 
+- Connect your development board and check the COM port number. Select the correct port from the Visual Studio Code. Click COM port icon at the bottom status bar and select the port from the menu.
+- Create a new terminal window using the top menu Terminal->New Terminal
+- Enter command platformio.exe run --target erase (This will erase the ESP12 chip)
+- Click -> icon at the bottom status bar and wait for the upload to finish.
+
+If all goes well, you should now have a working openMQTTGateway.
+
+### Testing
