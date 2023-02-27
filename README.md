@@ -128,7 +128,7 @@ If all goes well, you should now have a working openMQTTGateway.
 - If there are 433mhz devices around you, you can monitor their signals data under your base topic/OpenMQTTGateway_ESP8266_RF-CC1101/433toMQTT topic and also under homeassistant/device_automation topics.
 - To send radio signals, you should use this syntax as topic; your base topic/OpenMQTTGateway_ESP8266_RF-CC1101/commands/MQTTto433. For example if your base topic is "home" and you want to send a value like "123456" the correct topic should be "home/OpenMQTTGateway_ESP8266_RF-CC1101/commands/MQTTto433". You may enter it to MQTT Explorer like this and click publish to transfer it:
 ![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/MQTT.png)
-- Rest is it's about the settings you will make on your controller (like openHAB or Home Assistant).
+- Rest is all about the settings you will make on your controller (like openHAB or Home Assistant).
 
 I hope this guide will help you.
 
