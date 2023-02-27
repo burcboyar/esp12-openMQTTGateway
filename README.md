@@ -50,5 +50,7 @@ You'll need a development environment to do this and for not dealing with librar
 - Install PlatformIO IDE.
 - Goto https://github.com/1technophile/OpenMQTTGateway/releases and download the openMQTTGateway code.
 - Unzip the file and open folder from the Visual Studio Code.
-- To be able to use CC1101 we have to uncomment it in then User_config.h file. Find //#define ZradioCC1101   "CC1101"   //ESP8266, ESP32 line and replace it with #define ZradioCC1101   "CC1101"   //ESP8266, ESP32.
+
+#### Changes in User_config.h
+- Uncomment line "//#define ZradioCC1101   "CC1101"   //ESP8266, ESP32" (This enables CC1101 radio)
 - 
