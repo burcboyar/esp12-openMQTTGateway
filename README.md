@@ -57,9 +57,9 @@ You'll need a development environment to do this and for not dealing with librar
 
 Uncomment line  //#  define ESPWifiManualSetup true
 
-Enter your SSID in line #    define wifi_ssid "YOUR SSID HERE
+Enter your SSID in line #    define wifi_ssid "YOUR SSID HERE"
 
-Enter your WIFI password in line #    define wifi_password "YOUR WIFI PASSWORD HERE
+Enter your WIFI password in line #    define wifi_password "YOUR WIFI PASSWORD HERE"
 
 If you want to define static IP for your gateway;
 
