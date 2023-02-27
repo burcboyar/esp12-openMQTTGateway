@@ -52,11 +52,23 @@ You'll need a development environment to do this and for not dealing with librar
 - Unzip the file and open folder from the Visual Studio Code.
 
 #### Changes in User_config.h
-- Uncomment line "//#define ZradioCC1101   "CC1101"   //ESP8266, ESP32" (This enables CC1101 radio)
+- Uncomment line "//#define ZradioCC1101   "CC1101"" (This enables CC1101 radio)
 - If you experience wifi access point problems like me, you'll have to manually enter your wifi credentials;
 
-Uncomment line  "//#  define ESPWifiManualSetup true //uncomment you don't want to use wifimanager for your credential settings on ESP"
+Uncomment line  "//#  define ESPWifiManualSetup true"
 
 Enter your SSID in line "#    define wifi_ssid "YOUR SSID HERE"
 
 Enter your WIFI password in line "#    define wifi_password "YOUR WIFI PASSWORD HERE"
+
+If you want to define static IP for your gateway;
+
+Uncomment line "//#define NetworkAdvancedSetup true"
+
+Enter the IP address for your gateway; "const byte ip[] = {XXX, XXX, XXX, XXX};"
+
+Enter the IP adress of your modem; "const byte gateway[] = {XXX, XXX, XXX, XXX};"
+
+Enter DNS; "const byte Dns[] = {XXX, XXX, XXX, XXX};"
+
+And enter subnetmask; "const byte subnet[] = {XXX, XXX, XXX, XXX};"
