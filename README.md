@@ -102,5 +102,14 @@ That's all the changes I've made in User_config.h
 It should look like this;
 
 ![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/env.png)
+
 These will define our receiver and emitter pins. So, if you made a different wiring, you should change the numbers here according to your new setup.
+
+#### Changes in platformio.ini
+
+- Find and uncomment default_envs = nodemcuv2-rf-cc1101
+
+![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/platformio.png)
+
+### Flashing
 
