@@ -52,23 +52,55 @@ You'll need a development environment to do this and for not dealing with librar
 - Unzip the file and open folder from the Visual Studio Code.
 
 #### Changes in User_config.h
-- Uncomment line "//#define ZradioCC1101   "CC1101"" (This enables CC1101 radio)
+- Uncomment line //#define ZradioCC1101   "CC1101" (This enables CC1101 radio)
 - If you experience wifi access point problems like me, you'll have to manually enter your wifi credentials;
 
-Uncomment line  "//#  define ESPWifiManualSetup true"
+Uncomment line  //#  define ESPWifiManualSetup true
 
-Enter your SSID in line "#    define wifi_ssid "YOUR SSID HERE"
+Enter your SSID in line #    define wifi_ssid "YOUR SSID HERE
 
-Enter your WIFI password in line "#    define wifi_password "YOUR WIFI PASSWORD HERE"
+Enter your WIFI password in line #    define wifi_password "YOUR WIFI PASSWORD HERE
 
 If you want to define static IP for your gateway;
 
-Uncomment line "//#define NetworkAdvancedSetup true"
+Uncomment line //#define NetworkAdvancedSetup true
 
-Enter the IP address for your gateway; "const byte ip[] = {XXX, XXX, XXX, XXX};"
+Enter the IP address for your gateway; const byte ip[] = {XXX, XXX, XXX, XXX};
 
-Enter the IP adress of your modem; "const byte gateway[] = {XXX, XXX, XXX, XXX};"
+Enter the IP adress of your modem; const byte gateway[] = {XXX, XXX, XXX, XXX};
 
-Enter DNS; "const byte Dns[] = {XXX, XXX, XXX, XXX};"
+Enter DNS; const byte Dns[] = {XXX, XXX, XXX, XXX};
 
-And enter subnetmask; "const byte subnet[] = {XXX, XXX, XXX, XXX};"
+And enter subnetmask; const byte subnet[] = {XXX, XXX, XXX, XXX};
+
+- If you want to change your MQTT settings;
+
+MQTT IP can be changed from this line; #  define MQTT_SERVER "XXX.XXX.XXX.XXX"
+
+MQTT port can be changed from this line; #  define MQTT_PORT "1883"
+
+If you're using username and password in your MQTT server they can be defined from this lines; #  define MQTT_USER "your_username" and #  define MQTT_PASS "your_password"
+
+Base topic of the MQTT can be changed from this line; #  define Base_Topic "home/"
+
+Base topic is important when sending commands to the radio, so if you change it, you'll have to send your commands to this new base topic.
+
+That's all the changes I've made in User_config.h
+
+#### Changes in environments.ini
+
+- Find line [env:nodemcuv2-rf-cc1101]
+
+- A few lines below there should a line such as; '-DGateway_Name="OpenMQTTGateway_ESP8266_RF-CC1101"'
+
+- Add this 2 lines below;
+
+'-DRF_RECEIVER_GPIO=4'
+
+'-DRF_EMITTER_GPIO=2'
+
+It should look like this;
+
+![](https://github.com/burcboyar/esp12-openMQTTGateway/blob/main/pics/env.png)
+These will define our receiver and emitter pins. So, if you made a different wiring, you should change the numbers here according to your new setup.
+
